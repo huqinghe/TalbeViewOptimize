@@ -15,6 +15,7 @@
 		FCE197231FEA0935006A3629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE197221FEA0935006A3629 /* main.m */; };
 		FCE1972D1FEA0935006A3629 /* TableViewOptimezeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1972C1FEA0935006A3629 /* TableViewOptimezeTests.m */; };
 		FCE197381FEA0935006A3629 /* TableViewOptimezeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE197371FEA0935006A3629 /* TableViewOptimezeUITests.m */; };
+		FCE197471FEA26C3006A3629 /* OptimezeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE197461FEA26C3006A3629 /* OptimezeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		FCE197331FEA0935006A3629 /* TableViewOptimezeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewOptimezeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE197371FEA0935006A3629 /* TableViewOptimezeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewOptimezeUITests.m; sourceTree = "<group>"; };
 		FCE197391FEA0935006A3629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE197451FEA26C3006A3629 /* OptimezeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptimezeTableViewCell.h; sourceTree = "<group>"; };
+		FCE197461FEA26C3006A3629 /* OptimezeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptimezeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				FCE1971E1FEA0935006A3629 /* LaunchScreen.storyboard */,
 				FCE197211FEA0935006A3629 /* Info.plist */,
 				FCE197221FEA0935006A3629 /* main.m */,
+				FCE197451FEA26C3006A3629 /* OptimezeTableViewCell.h */,
+				FCE197461FEA26C3006A3629 /* OptimezeTableViewCell.m */,
 			);
 			path = TableViewOptimeze;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			files = (
 				FCE197181FEA0935006A3629 /* ViewController.m in Sources */,
 				FCE197231FEA0935006A3629 /* main.m in Sources */,
+				FCE197471FEA26C3006A3629 /* OptimezeTableViewCell.m in Sources */,
 				FCE197151FEA0935006A3629 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
