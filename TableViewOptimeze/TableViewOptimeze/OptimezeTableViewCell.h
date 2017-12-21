@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OptimezeTableViewCell : UITableViewCell
-
+-(void)setTestText:(NSString*)txt;
 @end

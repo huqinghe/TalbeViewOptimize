@@ -23,6 +23,7 @@
 #import "OptimezeTableViewCell.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *dataSource;
 @end
 
 @implementation ViewController
@@ -31,6 +32,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.view addSubview:self.tableView];
+    
+    
+}
+-(NSMutableArray *)dataSource
+{
+    if (_dataSource==nil) {
+        _dataSource = [[NSMutableArray alloc] init];
+        for (int i =0; i<300; i++) {
+            NSString *str = [NSString stringWithFormat:@"%d Async Display Test ✺◟(∗❛ัᴗ❛ั∗)◞✺ ✺◟(∗❛ัᴗ❛ั∗)◞✺ 😀😖😐😣😡🚖🚌🚋🎊💖💗💛💙🏨🏦🏫 Async Display Test ✺◟(∗❛ัᴗ❛ั∗)◞✺ ✺◟(∗❛ัᴗ❛ั∗)◞✺ 😀😖😐😣😡🚖🚌🚋🎊💖💗💛💙🏨🏦🏫",i];
+            [_dataSource addObject:str];
+
+        }
+    }
+    return  _dataSource;
 }
 -(UITableView *)tableView
 {
@@ -57,21 +72,22 @@
         cell = [[OptimezeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indef];
         NSLog(@"生成新的=section=:%ld,row=%ld",indexPath.section,indexPath.row);
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"section=:%ld,row=:%ld",indexPath.section,indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"section=:%ld,row=:%ld",indexPath.section,indexPath.row];
     NSLog(@"cell.tag=:");
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"cell=");
+    //cell.textLabel.text = ;
+    [(OptimezeTableViewCell*)cell setTestText:self.dataSource[indexPath.row]];
 }
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 30;
 }
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {

@@ -9,22 +9,23 @@
 
 @interface OptimezeTableViewCell()
 @property(nonatomic,strong)UIImageView* testImageView;
+@property(nonatomic,strong)UILabel *testLb;
 @end
 @implementation OptimezeTableViewCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self =  [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self.contentView addSubview:self.testImageView];
-        UIGraphicsBeginImageContextWithOptions(_testImageView.bounds.size, NO, 1.0);
-
-        [[UIBezierPath bezierPathWithRoundedRect:_testImageView.bounds cornerRadius:_testImageView.frame.size.width] addClip];
-        [_testImageView drawRect:_testImageView.bounds];
-        _testImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-        //结束画图
-        UIGraphicsEndImageContext();
+//        [self.contentView addSubview:self.testImageView];
+//        UIGraphicsBeginImageContextWithOptions(_testImageView.bounds.size, NO, 1.0);
+//
+//        [[UIBezierPath bezierPathWithRoundedRect:_testImageView.bounds cornerRadius:_testImageView.frame.size.width] addClip];
+//        [_testImageView drawRect:_testImageView.bounds];
+//        _testImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//        //结束画图
+//        UIGraphicsEndImageContext();
         
-
+        [self.contentView addSubview:self.textLabel];
         return self;
     }
     else
@@ -43,6 +44,17 @@
     return _testImageView;
 }
 
+-(UILabel*)textLabel
+{
+    if (_testLb==nil) {
+        _testLb = [[UILabel alloc] initWithFrame:self.contentView.bounds];
+    }
+    return _testLb;
+}
+-(void)setTestText:(NSString*)txt
+{
+    self.textLabel.attributedText = [[NSAttributedString alloc] initWithString:txt];
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
